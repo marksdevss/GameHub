@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBox</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+    <div class="container">
+        <img id="mario-icone" src="https://www.imagenspng.com.br/wp-content/uploads/2015/02/super-mario-mario-22.png" alt="" srcset="">
+        <br>
+        <br>
+        <input type="text" id="searchInput" name="search" placeholder="Buscar jogos ...">
+        <br>
+        <form id="searchForm" action="/" method="get">
+            <button id="pesquisar" type="submit">Pesquisar</button>
+            <button id="filter-btn" onclick="disableFilterButton()" >Filtros</button>
+            <button type="button" id="BotaoApagar">Limpar</button>
+            <button  id="libraryButton" onclick=""> <a id="texto-trailer" href="/Biblioteca.html">Minha Biblioteca</a></button>
+            <button type="button" id="themeToggleBtn" onclick="themeToggleBtn()">
+                <i class="fas fa-moon">☾</i> 
+                <i class="fas fa-sun" style="display:none">🔆</i> 
+            </button>
+            <button type="button" onclick="" id="sec-trailer"><a id="texto-trailer" href="/SecaoTrailers.html">🎞️</a></button>
+
+            <section id="filter-modal" class="hidden">
+                <div class="filter-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Filter Games</h2>
+                    <form id="filter-form">
+                        <label for="genre">Genre:</label>
+                        <select id="genre" name="genre">
+                        </select>
+                        <label for="platform">Platform:</label>
+                        <select id="platform" name="platform">
+                        </select>
+                        <label for="release-date">Release Date:</label>
+                        <input type="date" id="release-date" name="release-date">
+                        <button type="submit">Apply Filter</button>
+                    </form>
+                    <label for="platformSelect">Filter by Platform:</label>
+                    <select id="platformSelect" name="platform">
+                        <option value="">All Platforms</option>
+                        <option value="pc">PC</option>
+                        <option value="playstation">PlayStation</option>
+                        <option value="xbox">Xbox</option>
+                        <option value="nintendo">Nintendo</option>
+                    </select>
+                </div>
+            </section>
+        </form>
+
+        <div id="gamesList" class="games">
+        </div>
+        <div id="saveAlert" style="display: none;">Jogo salvo!</div>
+
+    </div>
+
+    <script src="api.js"></script>
+</body>
+
+</html>
